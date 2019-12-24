@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	alert(a);//A.报错(1.√)   B.undefined(2.√)  C.没有任何反应
+		
+		var a = 10;
+		
+		/*
+			js怪异现象:
+			在第10行运行时理论上应该是报错的 ,但是并没有 ,只是弹出undefined 
+			
+			(变量提升)运行机制:
+				其实在js在运行时, 首先会做一个预解析(将使用到的变量,函数创建),但是不会对其赋值 ,所以 在预解析阶段 a 并不会被赋予10 ,只有当代码运行到该位置时才会被赋值10
+		**/
+    </script>
+</body>
+</html>

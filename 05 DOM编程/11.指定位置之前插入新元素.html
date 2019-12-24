@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<!--此处插入图片-->
+    <div id="hr">----------这是一个div-------------- </div>
+    <script>
+    	var hr = document.getElementById("hr");
+		
+		var img = document.createElement("img");//创建img标签
+			/*img.setAttribute("src","images/grape.jpg");*/
+			  img.src="images/grape.jpg";
+			 
+			 var img2 = img.cloneNode();//克隆
+			   	 img2.src="images/fruit.jpg";
+				 
+		    document.body.appendChild(img);//末尾追加
+			
+			//insertBefore(新,指定元素) 将新元素插入到指定的元素之前 ,并且指定元素 与新元素是兄弟关系	
+		    document.body.insertBefore(img2,hr); //在指定元素之前插入新元素
+			
+    </script>
+	<!--末尾处-->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		}
+	#container{
+		width:600px;
+		height:600px;
+		margin:50px auto;
+		border:1px solid #ccc;
+		}
+	#container div{
+		float:left;
+		width:170px;
+		height:170px;
+		background-color:#F60;
+		margin:6px;
+		border:8px solid transparent;
+		box-shadow:0 0 5px 1px #ccc;
+		}	
+	#start{
+		display:block;
+		width:100%;
+		height:100%;
+		border:none;
+		background-color:#f9f9f9;
+		font-size:30px;
+		}
+	 #container div.active{
+		 border-color:red;
+		 box-shadow:0 0 10px 3px gold;
+		 background-color:#36C;
+		 }			
+</style>
+</head>
+
+<body>
+	<div id="container">
+    	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div><button id="start">开始抽奖</button></div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <script>
+    	var container = document.getElementById("container");
+		var divs = container.getElementsByTagName("div");//获取9宫格的div
+		
+		var order = [0,1,2,5,8,7,6,3];//顺序索引值 = > div的索引位置
+		
+		var index = 0;//当前所在的位置 => 转动的索引位置
+		var timer;
+		var speed = 50;
+		var count = 0;//记录转动的次数
+		
+		start.onclick = function(){
+			start.innerHTML = '抽奖中...';
+			//设定 ,抽奖的停止 必须转满 3圈 , 可以在接下来的两圈内,随机停下 
+			var randomNum = 23 + Math.floor(Math.random() * 7);
+				console.log(randomNum);
+			start.disabled = true;
+			timer = setInterval(function(){
+				count++;
+				if(count>=randomNum){
+					clearInterval(timer);
+				 }
+					
+				//清除所有的样式	
+				for(var i=0;i<order.length;i++){
+					 divs[order[i]].className="";
+					}
+				//设置当前位置的样式	
+				divs[order[index]].className ="active";
+				index++;
+				if(index>=order.length)index=0;
+				
+				},speed);
+			}
+		
+    </script>
+</body>
+</html>

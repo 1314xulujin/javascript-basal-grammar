@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	var arr = [1,2,3,4,5];
+		
+		//forEach() 遍历数组
+		arr.forEach(function(item,index){
+				//console.log('索引值为:',index,'元素为:',item)
+			});
+		
+		//[1,4,9,16,25]
+		var arr2 = arr.map(function(item){// item 就是每一次遍历数组的元素
+			//console.log(item);
+			return item * item; //返回元素的平方  ,return 将值返回
+			})
+			
+		//0 表示女 ,  1男  = > 
+		var sexs = [0,0,1,1,0,1,0,1,1,0,0,0,0,1];
+		
+		/*var abc = [];
+		for(var i=0;i<sexs.length;i++){
+			if(sexs[i]==0){
+				abc.push('女');
+				}else{
+				abc.push('男');	
+					}
+			}*/	
+			
+		
+		/*var abc = [];
+		sexs.forEach(function(item){
+			abc.push(item?'男':'女');
+			})	*/
+		
+		
+		var abc = sexs.map(function(item){
+			return item?'男':'女';
+			})	
+			
+		//
+		var socer = [59,60,65,32,49,85,26,19,98,84,76,66];
+		
+		//var aa = [];
+		
+	/*	for(var i=0;i<socer.length;i++){
+			if(socer[i]<60){
+				aa.push(socer[i]);
+				}
+			}*/
+		
+		/*socer.forEach(function(item){
+			if(item < 60){
+				aa.push(item);
+				}
+			})*/
+				
+		var aa = socer.filter(function(item){
+				return item < 60; //只要返回布尔值true , 则就将item 元素放入aa 数组
+			})
+			
+		var cc =socer.map(function(item){
+			return item<60?'不及格':item>80?'优秀':'及格';
+			})	
+			
+			
+		//reduce() 	累计 
+		var sum = socer.reduce(function(total,item){
+				console.log(item,total);
+				return total +=item;
+			})	
+				
+    </script>
+</body>
+</html>

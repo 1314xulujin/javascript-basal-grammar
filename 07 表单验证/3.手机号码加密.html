@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<input id="telInput" />
+    <p id="result"></p>
+	<script>
+    	//需求: 将手机号码转换成 138****8000
+		
+		telInput.onkeydown = function(e){
+			var e = e || window.event;
+			//console.log(e.keyCode);
+			var code = e.keyCode;
+			var tel = document.getElementById("telInput").value;
+			if(e.keyCode == 13){
+					console.log(tel);
+			//实现手机号码加密 , 顺便进行手机号码校验
+			//1.第一位数字为1  2.长度为11的数字 3.第二位数字只能[3-9]	
+			 	result.innerHTML = secret(tel);
+				telInput.value =secret(tel);
+			 }else if(!((code>=48&&code<=57)||(code>=96 && code<=105))){//排除非数字按键
+				if(code!=8 && code!=46){//排除两个删除键
+					return false;
+					} 	
+			 }else{
+				if(tel.length > 10){//长度大于11禁止输入
+					return false;
+				 }	 
+			}
+		}
+		
+		
+		//校验手机号码 并且加密
+		function checkTel(tel){
+			//校验是否为一个正确的手机号码
+			var flag = false;
+			if(tel.length==11){
+				 var arr = [3,4,5,6,7,8,9];
+				 var first = tel[0];
+				 var sec = tel[1];
+				 console.log(arr,first,sec)
+				 if(first==1 && arr.indexOf(sec*1)!=-1){
+					 flag = true;
+					 }
+			  }
+			return flag;	
+		  }
+		 
+		 //加密方法 
+		function secret(tel){
+			if(checkTel(tel)){
+			var s = tel.slice(0,3);
+			var e = tel.slice(-4);
+			console.log(s,e);		
+				return s + '****' + e;
+			}else{
+				return '手机号码错误~';		
+			 }
+			}  
+    </script>
+</body>
+</html>

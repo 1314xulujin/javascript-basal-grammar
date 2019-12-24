@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="show-box"> <i id="i"><img src="images/background-1.png" alt="" width="1035px" height="800px"></i>
+  <div>
+    <h2> <img src="images/background-0.png" alt="">
+      <button id="lucky">请抽奖</button>
+    </h2>
+   <!-- 英雄列表-->
+    <ul id="heroList"></ul>
+  </div>
+</div>
+
+<!--弹窗遮罩层-->
+    <div id="shadow"></div>
+   <!-- 弹窗对话框-->
+   <div class="modal" id="modal">
+   		<!--整个弹出框的背景-->
+   		<div class="modal-bg" id="hero-bg"></div>
+        <div class="modal-bg2"></div>
+   		<div class="modal-title">
+        	<span class="close" onclick="hideModal()">&times;</span>
+        	<!--<h1>中奖提示</h1>-->
+        </div>
+        
+        <div class="modal-body">
+        	<h4>恭喜您，抽中限定版皮肤 - <span id="hero-name">【李青-龙的传人】</span>！</h4>
+           	<!-- 英雄的图片-->
+            <p id="hero-img"></p>
+        </div>
+        
+        <div class="modal-footer">
+        	<button onclick="hideModal()">确定</button>
+            <p>*本活动最终解释权归腾讯公司所有</p>	
+        </div>
+   </div>
+<script src="js/index.js"></script>
+</body>
+</html>

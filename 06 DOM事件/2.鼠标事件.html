@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#box{
+		width:400px;
+		height:400px;
+		background-color:red;
+		margin:50px auto;
+		border:1px solid #ccc;
+		}
+	
+	.box{
+		width:200px;
+		height:200px;
+		background-color:green;
+		margin:100px auto;
+		
+		}	
+</style>
+</head>
+
+<body>
+	<div id="box">
+    	<div class="box"></div>
+    </div>
+    <script>
+    	var box = document.getElementById("box");
+		
+		//1.单击事件 - > onclick = >click
+		
+		//2.双击事件 = > ondblclick 
+		box.ondblclick = function(){
+			console.log('双击事件!');
+			}
+		
+		//3.鼠标按下事件 =>  onmousedown 	
+		box.onmousedown = function(){
+			console.log('鼠标按下事件!');
+			}
+		
+		//4.鼠标起来事件 => onmouseup
+		box.onmouseup = function(){
+			console.log('鼠标起来事件!');
+			}
+		
+		//5.鼠标悬停事件 = > onmouseover
+		box.onmouseover = function(){
+			//console.log('鼠标悬停事件!');
+			}
+		
+		//6.鼠标移出事件 = > onmouseout
+		box.onmouseout = function(){
+			//console.log('鼠标移出事件!');
+			}	
+		
+		//7.鼠标移动事件 => onmousemove
+		box.onmousemove = function(){
+			//console.log('鼠标移动事件!');
+			}	
+		
+		//8.鼠标进入事件 = >onmouseenter
+			box.onmouseenter = function(){
+				console.log('鼠标移动enter事件!');
+			}	
+		
+		//9.鼠标离开事件 = >onmouseleave
+		box.onmouseleave = function(){
+			console.log('鼠标移动leave事件!');
+			}	
+		
+		//mouseover \ mouseout 与 mouseenter / mouseleave 的区别: 
+		// (事件冒泡)mouseover \ mouseout 在其子元素上悬停和离开也会触发事件
+		// (事件不冒泡) mouseenter / mouseleave 在其子元素上进入离开不会触发事件
+		//事件冒泡现象:DOM元素触发事件的时候,会根据元素的嵌套关系,自底向上传递事件直至文档根部 
+    </script>
+</body>
+</html>

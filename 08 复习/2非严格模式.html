@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	function abc(a,a){
+			console.log(a,a);
+		}	
+		
+		abc(10,20);
+		
+		var x = 010;
+		
+		var obj = {};
+		Object.defineProperty(obj, "x", {value:0, writable:false}); //给obj设置一个x属性,值未0 ,不可写
+		obj.x = 30;
+		
+		
+		//var eval = 30;
+		
+		//已经不建议 :存在安全问题
+		eval('alert(132)');
+		
+		function hh(){
+			console.log(arguments);
+			}
+		
+		hh(10,20,30,40,50,60);
+		
+		function aa(){
+			console.log(this);//window
+			this.abc = 20;
+		}
+	aa();	
+	
+		var interface = 123;
+    </script>
+</body>
+</html>

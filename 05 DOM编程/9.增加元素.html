@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		}
+	div{
+		width:100px;
+		height:100px;
+		float:left;
+		}	
+</style>
+</head>
+
+<body>
+	
+	<script>
+		for(var r = 0;r<256;r++){
+			for(var g =0;g<1;g++){
+				var div = document.createElement("div");
+					div.style.background='rgb('+r+','+g+','+255+')';
+					document.body.appendChild(div);
+				}
+			}
+			
+    	/*var div = document.createElement("div"); //创建在内存中 = > <div></div>
+			div.setAttribute('class','box');
+			div.innerHTML = '这是新增的div';
+			
+			//将新增的网页元素插入到body中
+			document.body.appendChild(div);
+			
+			注意:只要是元素的新增或者删除之类的操作,一定是要从父节点下手
+			*/
+			
+    </script>
+   <!-- body末尾处 , 结束标签之前-->
+</body>
+</html>

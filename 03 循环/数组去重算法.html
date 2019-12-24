@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		//去重算法 一 :
+    	var arr = [10,2,0,10,20,5,8,9,10];
+		
+		var tmp = [];
+		for(var i=0;i<arr.length;i++){
+			if(!tmp.includes(arr[i])){
+				tmp.push(arr[i]);
+				}
+			}
+			
+			
+		//去重算法 二 :  ES6新增语法解决
+		var tmp2 = new Set(arr); //Set() 集合 (另一种类似数组的数据,再ES6中新增的 ,集合中的数据是唯一的)
+			arr3 = Array.from(tmp2);//将集合转换成数组
+			
+				
+    </script>
+</body>
+</html>

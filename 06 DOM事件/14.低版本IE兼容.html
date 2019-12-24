@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<button id="btn">按钮</button>
+	<script>
+	/*	var addEventListener = null;
+    	if(document.addEventListener){
+				//alert('支持!');
+				addEventListener = window.addEventListener;
+			}else{
+				//alert('不支持!@');
+				addEventListener = window.attachEvent;		
+		}
+		*/
+		//btn.attachEvent()	
+		
+		/*if(window.attachEvent){
+			//alert('支持!');
+			btn.attachEvent('onclick',function(){
+				alert(123);
+				})
+			}else{
+			//alert('不支持!');	
+			}*/	
+			
+		function bindEvent(element,type,handler){
+			if(element.addEventListener){
+				element.addEventListener(type,handler);
+			  }else{
+				var ev = 'on' + type;
+				element.attachEvent(ev,handler);	
+					}
+			}
+				
+		function unbindEvent(element,type,handler){
+			if(element.removeEventListener){
+				element.removeEventListener(type,handler);
+			  }else{
+				var ev = 'on' + type;
+				element.dettachEvent(ev,handler);	
+					}
+			}
+			
+		bindEvent(btn,'click',function(){
+			alert(123);
+			})
+				
+    </script>
+</body>
+</html>

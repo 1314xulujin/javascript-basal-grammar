@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	//1.onload = > 网页元素内容(图片等)加载完毕
+		window.onload = function(){
+			console.log('网页内容加载完毕!');
+			}
+			
+		//2.onresize = >窗口大小改变事件
+		window.onresize = function(){
+			console.log('窗口大小正在发生改变!');
+			}	
+		
+		//3.onclose => 窗口关闭事件
+		window.onclose = function(){
+			alert('正在关闭窗口!');
+			}	
+			
+		window.onblur = function(){
+			console.log('窗口失去焦点事件');
+			};
+		
+		window.onfocus = function(){
+			console.log('窗口获得焦点事件');
+			};	
+		
+		//document 的 oncopy 事件 	
+		
+		window.oncontextmenu = function(){
+			console.log('正在触发右键菜单事件!');
+			}	
+    </script>
+</body>
+</html>

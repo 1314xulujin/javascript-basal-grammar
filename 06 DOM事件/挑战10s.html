@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.container{
+		width:600px;
+		height:200px;
+		padding-top:50px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		text-align:center;
+		}
+</style>
+</head>
+
+<body>
+	<div class="container">
+    	<button id="btn">开始挑战</button>
+        <div id="time">10.00</div>
+    </div>
+    <script>
+    	var timeBox = document.getElementById("time");
+		var btn = document.getElementById("btn");
+		var timer,s,time=0;
+		var flag = false;
+		
+		btn.onmousedown = function(){
+			flag = true;
+			time = 0;
+			timer = setInterval(function(){
+				time++;
+				//更新时间
+			    s = (time / 100).toFixed(2); 
+				s = s<10?'0'+s:s;
+				timeBox.innerHTML = s;
+				
+				},10);
+			}
+		
+		document.onmouseup = function(){
+			if(flag){
+				clearInterval(timer);
+				flag = false;
+			if(time == 10 * 100){
+				alert('挑战成功!');
+				}else{
+				alert('挑战失败!');	
+				}
+				}
+			}
+			
+		/*btn.onmouseout = function(){
+			clearInterval(timer);
+			}*/		
+    </script>
+</body>
+</html>

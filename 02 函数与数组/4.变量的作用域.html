@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	var a = 10; //全局变量 ,可以在当前页面任何位置使用的变量
+		
+		//局部变量:变量只能在该变量定义时所在代码块内部使用.
+		function hello(){
+			var b = 20;//局部变量:在某个代码块内部定义的变量
+			var a = 30;
+			//alert(a);//30 优先使用局部变量
+			alert(c);//undefined
+			var c = 40;	
+			}
+			
+		hello();
+		alert(a);
+    </script>
+</body>
+</html>

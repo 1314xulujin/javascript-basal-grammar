@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	/**
+		window对象上的定时器函数:
+			-setInterval()=> 周期性定时器 (每隔指定时间执行一次)
+			
+			-setTimeout() => 延时定时器  (执行一次)
+		
+			定时器单位: ms 计算    1s = 1000 ms
+		**/  
+		
+	/*	1.setTimeout(function(){
+			alert('3秒钟时间到了!');
+			},3000);*/
+		
+		
+		function doSth(){
+			console.log('时间到了!boom~~~~');
+			}
+			
+		//2.setTimeout(doSth,3000);
+		
+		//3.setTimeout("doSth()",3000);
+		
+		
+		setInterval(doSth,3000);
+			
+    </script>
+</body>
+</html>

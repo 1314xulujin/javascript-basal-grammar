@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.container{
+		position:relative;
+		width:600px;
+		height:500px;
+		background:url(images/tx1.png);
+		margin:50px auto;
+		border:1px solid #ccc;
+		}
+		
+	.container button{
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-60px;
+		margin-top:-20px;
+		width:120px;
+		height:40px;
+		background:#ff3c3c;
+		color:#fff;
+		border:none;
+		cursor:pointer;
+		}	
+		
+	.container button:hover{
+		background-color:#900;
+		}	
+</style>
+</head>
+
+<body>
+	<div class="container">
+    	<button onclick="lucky()">开始抽奖</button>
+    </div>
+    <script>
+    	/**
+			需求分析:
+				1.单击抽奖按钮 ,触发抽奖机制
+				2.通过生成的随机数,来判断中奖情况
+					1)怎么生成随机数 => Math.random();
+					2)随机数取值 => 对生成的0-1之间的小数 处理后 ,取整数进行判断  
+					3)怎么判断中奖情况:8 => 一等奖 , 2 / 6 = >二等奖 ,3 / 5 / 7 =>三等奖
+					
+			作业:实现统计中奖情况:
+				一等奖次数
+				二等奖次数
+				三等奖次数
+				中奖次数
+				综合中奖概率				
+		*/
+		
+		var first = 0; //统计中一等奖的次数
+		var second = 0;//统计中二等奖的次数
+		var third = 0;//统计中三等奖的次数
+		var count = 0;//统计抽奖次数
+		
+		
+    
+		//定义一个抽奖函数
+		function lucky(){
+			count++;//记录一下抽奖次数	
+			var num = parseInt(Math.random()*10);
+			var txt = "";//中奖提示
+					
+				switch(num){
+					case 8:
+						first++;
+						txt = "恭喜您中得一等奖!";
+						break;
+					case 2:
+					case 6:
+						second++;
+						txt = "恭喜您中得二等奖!";
+						break;
+					case 3:
+					case 5:
+					case 7:
+						third++;
+						txt = "恭喜您中得三等奖!";
+						break;
+					default :
+						txt = "谢谢参与,继续努力!";
+						//alert("谢谢参与,继续努力!");	
+					}
+			//计算综合中奖概率
+			var p = ((first+second+third)/count * 100).toFixed(2) + '%';
+					
+			alert(txt+"\n\n中奖情况:\n一等奖:"+first+"\n二等奖:"+second+"\n三等奖:"+third+"\n抽奖次数:"+count+"\n综合中奖概率:"+ p );	
+			}
+    </script>
+</body>
+</html>

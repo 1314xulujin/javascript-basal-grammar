@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	//1.需求: 生成指定范围的整数  50 - 100 
+		//0-10 => Math.random() * 10
+		//0-50 => Math.random() * 50
+		//50 -100 => Math.random()*50 + 50
+		
+		function randomNumber(min,max){
+			return parseInt(Math.random()*(max - min + 1)) + min;	
+			}
+    	
+		var num = [];
+		
+		for(var i=0;i<10;i++){
+			num.push(randomNumber(50,100));
+		   }
+			
+		//2.计算偶数之和
+		//什么是偶数? 能够被2整除的数字就是偶数 = > 对2求余 余数为0 ,表示能够被2整除
+		var sum = 0;
+		for(var i=0;i<num.length;i++){
+			if(num[i]%2==0){
+			console.log('偶数');
+				sum+=num[i];
+			}else{
+			console.log('奇数');
+			}
+		}
+		
+				
+    </script>
+</body>
+</html>

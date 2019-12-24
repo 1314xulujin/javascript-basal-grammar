@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#box1{
+		width:800px;
+		height:800px;
+		background:#ccc;
+		margin:50px auto;
+		}
+		#box2{
+		width:600px;
+		height:600px;
+		background:red;
+		}
+	#box3{
+		width:400px;
+		height:400px;
+		background:green;
+		}
+	#box4{
+		width:200px;
+		height:200px;
+		background:blue;
+		}		
+</style>
+</head>
+
+<body>
+	<div id="box1">box1
+    	<div id="box2">box2
+        	<div id="box3">box3
+            	<div id="box4">
+               	 box4
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+		//事件冒泡: 根据DOM嵌套关系将事件自底向上传递.
+		
+		//阻止事件冒泡 
+    	box1.onclick = function(e){
+			alert("box1单击事件!");
+			}
+			
+		
+		box2.onclick = function(e){
+			alert("box2单击事件!");
+			var e = e || window.event;
+			console.log(e);
+			e.bubbles = false;
+			
+			//e.stopPropagation(); //1.阻止事件冒泡
+			//低版本IE / chrome 也可以
+			e.cancelBubble = true; //2.阻止冒泡
+			}
+			
+		box3.onclick = function(e){
+			alert("box3单击事件!");
+			e.cancelBubble = true; //2.阻止冒泡
+			}
+			
+		box4.onclick = function(e){
+			alert("box4单击事件!");
+			e.cancelBubble = true; //2.阻止冒泡
+			}			
+    </script>
+</body>
+</html>

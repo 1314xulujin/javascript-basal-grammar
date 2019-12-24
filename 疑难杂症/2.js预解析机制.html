@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+	/*
+		js 预解析 机制:
+			在运行js 代码之前 = > 对全局变量/ 函数 做一次与解析 -> 执行全局的代码 -> 解析局部变量/ 函数  (此时并不会执行赋值操作 ,先声明变量和方法)
+			
+		在预解析阶段时: 函数的优先级 高于 变量	
+	
+	*/
+    var a = 20;
+	
+	function abc(a){
+		console.log(a); // = > ? 40 x   = >a () √
+		var a = 10;
+		function a(){
+			alert(3);
+			}
+		console.log(a);	//= > ? a()x   => 10 √
+ 	 }
+		
+	abc(40);	
+    </script>
+</body>
+</html>

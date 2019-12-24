@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<div id="box"></div>
+    <p>这是一个p1</p>
+    <p name="ss">这是一个p2</p>
+    <p>这是一个p3</p>
+    <p name="ss">这是一个p4</p>
+    <div name="ss">div</div>
+    <script>
+    	//一切DOM操作(增\删\改\查), 必须先查找到对应的元素(DOM对象)
+		/*
+			伪数组: 长得像数组 ,可以使用数组的属性和获取方式, 但是不具有数组的方法.
+			
+			所谓的元素的集合: [ DOM1  , DOM2  , DOM3 ]
+			
+			获取网页元素/标签对象(DOM对象)的方式:
+				1.通过ID 属性获取: getElementById()  = > 返回DOM对象
+				
+				2.通过标签名称获取: getElementsByTagName = > 返回元素的集合(伪数组)
+				
+				
+				3.通过元素的name属性值:getElementsByName = > 返回元素的集合
+				
+				4.(ie9+)通过元素的class属性值:getElementsByClassName =>返回元素的集合
+		*/
+		
+		var box = document.getElementById("box");//DOM对象(属性 / 方法)
+		console.log(box);
+		
+		box.innerHTML = '<h1>教育改变生活!</h1>'; //innerHTML属性 就是DOM对象的网页内容属性(可以带HTML标记)
+		
+		var ps = document.getElementsByTagName("p");//获取所有的P标签对象
+		
+		var ss = document.getElementsByName("ss");//获取元素name属性为ss的元素
+    </script>
+</body>
+</html>

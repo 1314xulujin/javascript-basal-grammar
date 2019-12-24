@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<input id="input" />
+    <script>
+    	var input = document.getElementById("input");
+		
+		//onkeydown 键盘按下事件
+		input.onkeydown = function(){
+			//console.log('键盘按下事件!');
+			}
+		
+		//onkeyup 键盘按键起来事件
+		input.onkeyup = function(){
+			//console.log('键盘按键起来事件!');
+			}
+			
+		//onkeypress 键盘按键产生可打印字符事件
+		input.onkeypress = function(){
+			console.log('这是一个字符键!');
+			}
+    </script>
+</body>
+</html>

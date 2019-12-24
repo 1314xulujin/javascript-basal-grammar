@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	//Array()
+		console.log(Math);
+		
+		/**
+			属性:
+				PI :  π 圆周率
+			
+			方法:
+				abs() 绝对值 =>  |-3|	
+				random() 生成0-1之间的随机数
+				round() 四舍五入
+				pow(x,y) 返回 x 的 y 次幂。
+				max(x,y,z) 返回xyz中的最大值
+				min(x,y,z) 返回xyz中的最小值
+				floor() 向下取整
+				ceil()  向上取整
+				
+				三角函数:
+					sin()
+					cos()
+					tan()
+					
+					asin()
+					acos()
+					atan() 反正切
+					
+				
+				
+		*/
+		//alert(Math.abs(-3))
+		var a = 1.554;
+		//alert(Math.round(a));
+		
+		var b = 10.1;
+		
+		var c = 100.99999;
+		//alert(Math.ceil(b)); //= > 11
+    	
+		//alert(Math.floor(c)); //=> 100
+		//需求: 求sin(30)  = > ?? 弧度制
+		//alert(Math.PI/180 * 30)
+		
+		//已知角度求正切值
+		//alert(Math.tan(Math.PI / 180 *45));
+		
+		//已知正切值 ,求角度 , 1 = > 45
+		alert(Math.atan(1) * 180 / Math.PI);
+    </script>
+</body>
+</html>

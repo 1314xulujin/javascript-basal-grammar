@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.box span{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	border:1px solid #ccc;
+	line-height:30px;
+	text-indent:10px;
+	font-weight:bold;
+	}
+
+.box span.even{
+	background:#f9f9f9;
+	}	
+</style>
+</head>
+
+<body>
+	<div class="box">
+    	<script>
+    	for(var i=1;i<=9;i++){
+			for(var j=1;j<=i;j++){
+				document.write( '<span class="'+(i%2==0?"even":"odd")+'" style="color:'+creatRGBColor()+';">'+ i +' X '+ j + ' = ' + i*j + '</span>' );
+				}	
+			document.write('<br/>');	
+			}
+			
+		//回顾: 颜色表示方式: 1.关键字  2.十六进制  3.rgb  rgb(255,255,255);
+		
+		function creatRGBColor(){
+			var R = parseInt(Math.random()*256);
+			var G = parseInt(Math.random()*256);
+			var B = parseInt(Math.random()*256);
+			
+			return 'rgb('+R+','+G+','+B+')';
+			}	
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		/**
+			字符串:
+				-属性
+					length  返回字符串的长度(包含空白字符)
+					str[0] :可以通过类似于数组下标的方式获取字符串中指定位置的字符
+				
+				- 方法
+				1. charAt(index) 返回字符串中 ,指定索引值(index)位置的字符
+				2. charCodeAt(index) 返回字符串中,指定index位置字符的ascll码
+				3. concat() 合并两个字符串
+				4. indexOf(str,index) 返回指定字符串str 再字符中首次出现的位置
+				
+				
+				5. slice(start,end) 截取字符串中,从start位置开始, 至end位置之间的字符(start <=  X  < end),可以为负值(从字符串末尾位置开始截取)例如: str.slice(-6) 截取末尾6个字符
+				6. split(str)将字符串通过指定的str分隔符 ,进行切割字符串,返回一个数组,如果需要将字符串逐个字符切割,可以设置分隔符为空""
+				7. substr(index,length) 截取字符串从index位置开始 共截取length个字符
+				8. substring(start,end)截取字符串中从start位置开始,至end之间的字符
+				
+				9. toLowerCase() 将字符串字母全部小写
+				10.toUpperCase() 将字符串字母全部大写
+				11.trim()		 将字符串的开头和末尾的空格截去
+					 
+				12.replace(要被替换的字符,替换后的字符) 将字符串中指定的字符替换成新的内容(默认字符串只替换首次出现的字符,可以使用正则表达式,来实现完整替换)
+				
+				13.search(str)返回字符串中指定字符str的首次出现位置(未找到返回-1) 特点:可以使用正则表达式,更精准的匹配.
+				14.match()将符合匹配规则的字符放入一个新的数组中(可以使用正则表达式精准匹配)
+				
+				(ES6)
+				15.matchAll() 将字符串逐一匹配全部符合指定字符内容
+				16.includes() 检测某个字符释放存在于当前字符串 ,返回布尔值
+				17.lastIndexOf() 找到符合当前字符匹配最后一次出现的位置
+				
+				18.endsWith() 检测字符串是否是以某个字符内容结尾
+				19.startsWith() 检测字符串是否是以某个字符内容开头
+				
+				20.padEnd(length,str)将字符串补充长度为length,如果不足length时,用str在结尾位置补充 
+				21.padStart()将字符串补充长度为length,如果不足length时,用str在开头位置补充 
+				22.repeat(num)重复 ,将字符串内容重复num 次  	 
+		
+		*/
+    	/*var str = 'This is JavaScript!';*/
+		var str = new String('This is JavaScript');	
+		
+		console.log(str);
+		
+		//a.padStart(10,'*') = > "********sc"
+		
+    </script>
+</body>
+</html>

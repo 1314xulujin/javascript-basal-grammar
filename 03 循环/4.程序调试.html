@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<button onclick="name()">按钮</button>
+    <button onclick="abc()">abc</button>
+	<script>
+    	/*
+			常见的调试方式:
+				1.直接在浏览器的控制台(console) (主动报红色的错误 ,一般就是语法错误(低级错误))
+				
+				2.逻辑或者业务流程错误(没有语法错误,效果也有反应,但是不是预期的效果)
+				只能审查程序运行流程,每一个环节运行是否跟设定预期一样. - 【断点调试】
+				
+				断点调试：
+					1.alert() 
+					2.直接使用console.log() 在觉得可能出现问题的代码处 ,输出你觉得有问题的数据值,进行审查是否与结果一致
+					
+					3.直接通过浏览器的控制台打断点 ,进行调试: 在浏览控制台打开[sources] - > 打开对应的文件 ,找到对应代码处的行号位置 ,点上断点 ,再次刷新浏览器. 
+						
+		*/
+		
+		/*var name = 123;
+		console.log(name);*/
+		
+		/*function name(){
+			alert(123);
+			}*/
+			
+		/*var abc = 123;
+		function abc(){
+			alert(132)
+			}	*/
+			
+			//alert(132);
+	
+			//console.log(456);
+			
+		for(var i=0;i<3;i++){
+			document.write('<br/>哈哈哈哈哈啊');
+			}		
+    </script>
+</body>
+</html>

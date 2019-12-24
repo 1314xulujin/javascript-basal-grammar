@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.select{
+		width:600px;
+		height:300px;
+		padding:40px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		}
+		
+	
+	.select span{
+		padding:14px 20px;
+		border:1px solid #ccc;
+		background-color:#f1f1f1;
+		margin:15px 5px;
+		border-radius:15px;
+		}	
+</style>
+</head>
+
+<body>
+
+	<label><input type="checkbox" name="fruit" value="apple" checked/>苹果</label>
+    <label><input type="checkbox" name="fruit" value="watermelon"/>西瓜</label>
+    <label><input type="checkbox" name="fruit" value="banana"/>香蕉</label>
+    <label><input type="checkbox" name="fruit" value="grape"/>葡萄</label>
+    <label><input type="checkbox" name="fruit" value="peach"/>桃子</label>
+    
+    <button onclick="getMyChoice()">获取我选择的水果</button>
+    <p>
+    	<label><input type="checkbox" />全选</label>
+        <label><input type="checkbox" />反选</label>
+    </p>
+    <div class="select">
+    	<span>banana</span>
+    </div>
+    <script>
+    	/**
+			需求: 点击按钮 ,弹出我选择的水果?
+				1.怎么知道是否被选中 =>  看复选框的 checked 属性是否有勾选 :选中为true , 否则为false
+				2.循环 - > 挨个复选框去判断
+				3.获取DOM对象
+		*/
+		
+		var checkboxs = document.getElementsByName("fruit"); //DOM对象的集合
+		
+		function getMyChoice(){
+			var tmp = [];//临时存储选中的数据
+			//通过循环 , 逐一判断是否被勾选
+			for(var i=0;i<checkboxs.length;i++){
+				//console.log(checkboxs[i].checked);
+				if(checkboxs[i].checked){
+				//console.log(checkboxs[i].value);
+					tmp.push(checkboxs[i].value);	
+					}
+				
+				}
+		 var info = tmp.length<1?'您没有选择任何水果':"您选择的水果是:"+tmp;		
+				alert(info);
+			}
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;}
+	#shadow{
+		position:fixed;
+		z-index:998;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:rgba(0,0,0,.5);
+		/*display:none;*/
+		}
+		
+	.modal{
+		position:absolute;
+		z-index:999;
+		width:500px;
+		/*height:520px;*/
+		top:30%;
+		left:50%;
+		margin-left:-300px;
+		margin-top:-150px;
+		background-color:#fff;
+		border-radius:10px;
+		padding:20px;
+		overflow:hidden;
+		
+	/*	display:none;*/
+		}
+		
+	.modal-bg{
+		position:absolute;
+		z-index:-1;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:url(images/1.jpg) center / cover;
+		}	
+	.modal-bg2{
+		position:absolute;
+		z-index:-1;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:rgba(0,0,0,.8);
+		}		
+	.modal .close{
+		position:absolute;
+		right:15px;
+		top:0px;
+		font-size:36px;
+		font-weight:bold;
+		color:#999;
+		cursor:pointer;
+		}
+	.modal .close:hover{
+		color:#666;
+		}
+	.modal .modal-footer{
+		/*position:absolute;*/
+		width:100%;
+		bottom:20px;
+		text-align:center;
+		}
+	.modal .modal-footer p{
+		color:#ccc;
+		line-height:35px;
+		}	
+	.modal .modal-footer button{
+		width:140px;
+		height:40px;
+		font-size:16px;
+		border-radius:8px;
+		background-color:#4F94CD;
+		color:#fff;
+		border:0;
+		cursor:pointer;
+		}
+	.modal .modal-footer button:hover{
+		background-color:#63B8FF;
+		}	
+	.modal .modal-title h1{
+		color:red;
+		font-size:24px;
+		margin:10px 0;
+		}	
+	.modal .modal-body{
+		margin-top:20px;
+		text-align:center;
+		color:#fff;
+		}
+	.modal .modal-body h4{
+		font-size:18px;
+		font-weight:500;
+		}
+	.modal .modal-body h4 span{
+		font-weight:bold;
+		color:red;
+		}		
+	.modal .modal-body p{
+		width:308px;
+		margin:15px auto;
+		height:400px;
+		background:url(images/1.jpg) center 0 no-repeat;
+		border:5px solid #f9f9f9;
+		box-shadow: 0 0 10px #666;
+		border-radius:5px;
+		}							
+</style>
+</head>
+
+<body>
+	
+    <button onclick="showModal()">抽奖</button>
+	<h1>这是抽奖页面！</h1>
+
+	<!--弹窗遮罩层-->
+    <div id="shadow"></div>
+   <!-- 弹窗对话框-->
+   <div class="modal">
+   		<div class="modal-bg"></div>
+        <div class="modal-bg2"></div>
+   		<div class="modal-title">
+        	<span class="close" onclick="hideModal()">&times;</span>
+        	<!--<h1>中奖提示</h1>-->
+        </div>
+        
+        <div class="modal-body">
+        	<h4>恭喜您，抽中限定版皮肤 - <span>【李青-龙的传人】</span>！</h4>
+            <p>
+            </p>
+        </div>
+        
+        <div class="modal-footer">
+        	<button onclick="hideModal()">确定</button>
+            <p>*本活动最终解释权归腾讯公司所有</p>	
+        </div>
+   </div>
+	<script>
+		//http://lol.qq.com/act/a20171205hextech/ (10个)
+    	//点击关闭，对话框 ，遮罩层隐藏
+		function hideModal(){
+			//获取遮罩层
+			var shadow = document.getElementById("shadow");
+			//获取对话框
+			var modal = document.getElementsByClassName("modal")[0];
+			
+			//隐藏对话框
+			modal.style.display = "none";
+			
+			shadow.style.display="none";
+			}
+			
+			
+		//显示对话框
+		function showModal(){
+			//获取遮罩层
+			var shadow = document.getElementById("shadow");
+			//获取对话框
+			var modal = document.getElementsByClassName("modal")[0];
+			
+			//隐藏对话框
+			modal.style.display = "block";
+			
+			shadow.style.display="block";
+			
+			}	
+			
+    </script>
+</body>
+</html>

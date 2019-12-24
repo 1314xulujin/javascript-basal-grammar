@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<a id="a" href="http://www.baidu.com">百度</a>
+	<p>DOM元素中,有些远些特定功能,例如超链接点击会跳转,表单点击提交会跳转页面,右键会默认出来一个菜单 等等 都属于默认事件.</p>
+    
+    <script>
+    	window.oncontextmenu = function(){
+			console.log('正在调用右键菜单!');
+			//阻止元素的默认行为 
+			return false;
+			}
+		
+		a.onclick= function(){
+			return false;
+			}	
+    </script>
+</body>
+</html>

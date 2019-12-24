@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		}
+	a{
+		text-decoration:none;
+		font-size:12px;
+		color:#666;
+		}
+	ul,li{
+		list-style:none;
+		}	
+	#contextmenu{
+		position:absolute;
+		min-width:140px;
+		border:1px solid #ccc;
+		box-shadow:0 0 3px #eee;
+		display:none;
+		}	
+		
+	#contextmenu li{
+		padding:0 10px;
+		line-height:30px;
+		border-bottom:1px dashed #ccc;
+		}
+	#contextmenu li a{
+		display:block;
+		}	
+	#contextmenu li:hover{
+		background-color:#f1f1f1;
+		}	
+	#contextmenu li.noborder{
+			border:0;
+			}	
+</style>
+</head>
+
+<body>
+	<div id="contextmenu">
+    	<ul>
+        	<li><a target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lby.link&title=%E8%BF%99%E6%98%AF%E5%88%86%E4%BA%AB%E7%9A%84%E6%BC%94%E7%A4%BA%E6%A1%88%E4%BE%8B&summary=%E8%BF%99%E6%98%AF%E4%B8%80%E6%AE%B5%E6%91%98%E8%A6%81">分享到QQ空间</a></li>
+            <li><a href="#">分享到QQ好友</a></li>
+            <li><a href="#">分享到朋友圈</a></li>
+            <li><a href="#">分享到腾讯微博</a></li>
+            <li class="noborder"><a href="#">分享到新浪微博</a></li>
+        </ul>
+    </div>
+    <script>
+	//分享的链接 https://blog.csdn.net/qq_37022150/article/details/82866171
+	
+		var contextmenu = document.getElementById("contextmenu");
+		
+		var clientW = window.innerWidth;//窗口可视区域的宽度
+		var clientH = window.innerHeight;
+		
+		
+		
+    	//禁用系统默认的右键菜单
+		window.oncontextmenu = function(e){
+			var mw = contextmenu.offsetWidth;//获取菜单元素的宽度
+			var mh = contextmenu.offsetHeight;//获取菜单元素的高度
+		
+			var e = e || window.event;
+			
+			var x = e.clientX;
+			var y = e.clientY;
+			
+			//console.log(x,y);
+			
+			contextmenu.style.display = "block";
+			
+			var mw = contextmenu.offsetWidth;//获取菜单元素的宽度
+			var mh = contextmenu.offsetHeight;//获取菜单元素的高度
+			
+			console.log(mw,mh);
+			//判断菜单是否会出界 
+			if(x > clientW - mw){
+				console.log('菜单会出界');
+				x = clientW - mw;
+				}
+			
+			if(y > clientH - mh){
+				y = clientH - mh;
+				}
+			contextmenu.style.left = x + 'px';
+			contextmenu.style.top = y + 'px';
+			
+			return false;
+			}
+			
+		window.onblur = function(){
+			contextmenu.style.display = "none";
+			}	
+    </script>
+</body>
+</html>

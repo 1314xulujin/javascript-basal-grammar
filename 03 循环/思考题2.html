@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	/*
+	 * 马克思的手稿中有这样一道有趣的数学题：有30个人，
+     * 其中有男人，女人，小孩。他们在一家饭馆中吃饭，
+     * 共花费50先令。 如果每个男人吃饭要花3先令，每个女人要花2先令，
+	   每个小孩要花1先令，问男人，女人，小孩各多少人？	
+	 */
+	 
+	 var child,man,women;
+	 
+	 for(man=0;man<17;man++){
+		 for(women=0;women<26;women++){
+			 //判断什么时候条件成立
+			 child = 30 - man - women;
+			 if(man*3 + women*2 + child == 50){
+				 console.log('符合条件的情况:男人:',man,'女人:',women,'小孩:',child);
+				 }
+			 }
+		 }
+    </script>
+</body>
+</html>

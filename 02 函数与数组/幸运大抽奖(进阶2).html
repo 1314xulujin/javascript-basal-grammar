@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.container{
+		position:relative;
+		width:600px;
+		height:500px;
+		background:url(images/tx1.png);
+		margin:50px auto;
+		border:1px solid #ccc;
+		text-align:center;
+		}
+		
+	.container button{
+		display:inline-block;
+		margin:230px 10px;
+		width:120px;
+		height:40px;
+		background:#ff3c3c;
+		color:#fff;
+		border:none;
+		cursor:pointer;
+		}	
+		
+	.container button:hover{
+		background-color:#900;
+		}	
+</style>
+</head>
+
+<body>
+	<div class="container">
+    	<button onclick="lucky(1,0)">开始抽奖(单次)</button>
+        <button onclick="lucky(10,1)">开始抽奖(10次)</button>
+        <button onclick="lucky(100,2)">开始抽奖(100次)</button>
+    </div>
+    <script>
+    	/**
+			需求分析:
+				1.单击抽奖按钮 ,触发抽奖机制
+				2.通过生成的随机数,来判断中奖情况
+					1)怎么生成随机数 => Math.random();
+					2)随机数取值 => 对生成的0-1之间的小数 处理后 ,取整数进行判断  
+					3)怎么判断中奖情况:8 => 一等奖 , 2 / 6 = >二等奖 ,3 / 5 / 7 =>三等奖
+					
+			作业:实现统计中奖情况:
+				一等奖次数
+				二等奖次数
+				三等奖次数
+				中奖次数
+				综合中奖概率				
+		*/
+			
+   	 var list = [[0,0,0,0],[0,0,0,0],[0,0,0,0]];//一个用于存储,抽奖次数,中奖次数的数组,0位置记录抽奖次数,1 , 2,3位置分别记录中123等奖次数
+	 
+		//定义一个抽奖函数
+		function lucky(number,index){//number 指定的抽奖次数	
+			//使用循环 ,执行重复操作
+			for(var i=0;i<number;i++){
+			list[index][0]++;//记录一下抽奖次数	
+			var num = parseInt(Math.random()*10);
+			var txt = "";//中奖提示
+					
+				switch(num){
+					case 8:
+						list[index][1]++;
+						txt = "恭喜您中得一等奖!";
+						break;
+					case 2:
+					case 6:
+						list[index][2]++;
+						txt = "恭喜您中得二等奖!";
+						break;
+					case 3:
+					case 5:
+					case 7:
+						list[index][3]++;
+						txt = "恭喜您中得三等奖!";
+						break;
+					default :
+						txt = "谢谢参与,继续努力!";
+						//alert("谢谢参与,继续努力!");	
+					}
+				
+			}
+					
+			//计算综合中奖概率
+			var p = ((list[index][1]+list[index][2]+list[index][3])/list[index][0] * 100).toFixed(2) + '%';
+					
+			alert(txt+"\n\n中奖情况:\n一等奖:"+list[index][1]+"\n二等奖:"+list[index][2]+"\n三等奖:"+list[index][3]+"\n抽奖次数:"+list[index][0]+"\n综合中奖概率:"+ p );	
+			}
+    </script>
+</body>
+</html>

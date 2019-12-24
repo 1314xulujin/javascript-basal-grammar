@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		}
+		
+	.container{
+		width:400px;
+		padding:20px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		text-align:center;
+		background-color:#f1f1f1;
+		border-radius:10px;
+		text-shadow:0 0 2px #fff,0 0 5px #666;
+		}	
+		
+	.container #dateBox{
+		font-size:18px;
+		font-weight:bold;
+		color:#666;
+		}
+	.container #timeBox{
+		line-height:100px;
+		font-size:60px;
+		font-weight:bold;
+		color:#666;
+		}		
+</style>
+</head>
+
+<body>
+	<div class="container">
+    	<div id="dateBox">2008年8月8日 星期二</div>
+        <div id="timeBox">10:48:52</div>
+    </div>
+    <script>
+    	//需求: 根据当前时间自动更新
+		var dateBox = document.getElementById("dateBox");
+		var timeBox = document.getElementById("timeBox");
+		
+		var weeks = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+		
+		
+		//定义一个更新日期时间的函数
+	function updateTime(){
+			
+		var date = new Date();
+		var y = date.getFullYear();//年份
+		var m = date.getMonth();//月份
+		var d = date.getDate();//日期
+		var w = date.getDay();//星期
+		
+		var h = date.getHours();//小时
+		var i = date.getMinutes();//分 
+		var s = date.getSeconds();//秒
+		
+		//更改日期
+		dateBox.innerHTML = y + '年' + (m+1) + '月' + d + '日 ' + weeks[w];
+		
+		//个位数补足两位+0
+		h = h < 10?'0' + h : h;
+		i = i < 10?'0' + i : i;
+		s = s < 10?'0' + s : s;
+		
+		//更改时间
+		timeBox.innerHTML = h + ':' + i + ':' + s;
+	}
+	
+	updateTime();
+	//设置定时器
+	setInterval(updateTime,1000);
+    </script>
+</body>
+</html>

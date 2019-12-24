@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		/**
+			冒泡排序算法:
+				(每一轮循环)每次把数组中的前一项与其后一项的对比,如果前一项,大于后一项,则两个人交换位置.
+				
+		冒泡排序的过程:
+			第一轮:
+			1.[3,5,1,4,2]
+			2.[3,1,5,4,2]
+			3.[3,1,4,5,2]
+			4.[3,1,4,2,5]  (找出数组中的最大值)
+			5.[3,1,4,2,5]
+			
+			第二轮:
+			6.[1,3,4,2,5]
+			7.[1,3,4,2,5]
+			8.[1,3,2,4,5]
+			9.[1,3,2,4,5]
+			10.[1,3,2,4,5]
+			
+			第三轮:
+			11.[1,3,2,4,5]
+			12.[1,2,3,4,5]
+			13.[1,2,3,4,5]
+			14.[1,2,3,4,5]
+			15.[1,2,3,4,5]
+			...
+			
+			第五轮:
+			....
+				
+					
+				
+		*/
+		
+    	var arr = [5,3,1,4,2];
+		//var arr = [15,23,31,24,12,9,10,61,52,34];
+		
+		
+		for(var i=0;i<arr.length;i++){
+			for(var j=0;j<arr.length;j++){
+				if(arr[j]>arr[j+1]){
+					var tmp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = tmp;
+					}
+				}
+			}
+		
+		
+		
+		//冒泡优化方案: https://blog.csdn.net/hansionz/article/details/80822494
+    </script>
+</body>
+</html>

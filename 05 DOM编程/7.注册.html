@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.box{
+		width:600px;
+		height:400px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		padding:20px;
+		}
+	.box button[disabled]{
+		background-color:#ccc;
+		color:#666;
+		cursor:not-allowed;
+		}	
+	.box button{
+		background:#06C;
+		color:#fff;
+		border:none;
+		padding:10px 16px;
+		border-radius:5px;
+		cursor:pointer;
+		}	
+</style>
+</head>
+
+<body>
+	<div class="box">
+    	<p>这是注册项1</p>
+        <p>这是注册项2</p>
+        <p>这是注册项3</p>
+        <p>这是注册项4</p>
+        <p>这是注册项5</p>
+        <p>	
+        	<label>
+        	<input type="checkbox" id="agree" onclick="submit.disabled = !agree.checked" />
+            同意用户协议
+            </label>
+        </p>
+        <p>
+        	<button id="submit" disabled="disabled">立即注册</button>
+        </p>
+       
+    </div>
+	 <script>
+	 	var agree = document.getElementById("agree");
+		
+	 	function agreement(){
+				submit.disabled = !agree.checked;
+			}	
+     </script>
+</body>
+</html>

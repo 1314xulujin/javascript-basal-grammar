@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    "use strict"; //代码块位置首行 ,声明使用严格模式 (下一代ECMA语法)
+    
+	//1.不允许使用未声明过的变量 
+	//a = 20;
+	
+	/*function abc(){
+		"use strict";
+		
+		}*/
+		
+	//2.不允许删除变量或对象。
+	//var a = 20;
+	//delete a;
+	
+	
+	//3.不允许删除函数。
+	
+	
+	//4.不允许变量重名
+	/*function abc(a,a){
+		console.log(a,a);
+		}*/	
+	
+	//5.不允许使用八进制
+	//var x = 010;
+		
+	//6.不允许使用转义字符
+	//var x = '\010'; 
+	
+	//7.不允许对只读属性赋值
+	var obj = {};
+	Object.defineProperty(obj, "x", {value:0, writable:false}); //给obj设置一个x属性,值未0 ,不可写
+		//obj.x = 30
+	
+	//8.不允许对一个使用getter方法读取的属性进行赋值
+		
+	//9.不允许删除一个不允许删除的属性
+	
+	//10.变量名不能使用 "eval" 字符串	
+		//var eval = 30;	
+		
+	//11.变量名不能使用 "arguments" 字符串 = >所有函数内部,无需声明可以直接使用的参数伪数组对象
+	
+	//12.由于一些安全原因，在作用域 eval() 创建的变量不能被调用
+	
+	//13. 禁止this关键字指向全局对象。
+	// 返回false，因为"this"指向全局对象，"!this"就是false
+	// 返回true，因为严格模式下，this的值为undefined，所以"!this"为true。
+	
+	function aa(){
+		console.log(this);//不允许指向window ,所以被赋值为undefined
+		this.abc = 20;
+		}
+	aa();
+		
+	//14.为了向将来Javascript的新版本过渡，严格模式[新增]了一些保留关键字：	
+		/*
+		implements
+		interface
+		let
+		package
+		private
+		protected
+		public
+		static
+		yield
+		*/		
+    </script>
+</body>
+</html>

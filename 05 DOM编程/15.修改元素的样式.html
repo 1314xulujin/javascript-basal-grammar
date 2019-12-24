@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#container{
+		width:800px;
+		height:600px;
+		margin:50px auto;
+		border:1px solid #ccc;
+		}	
+	
+	 .box{
+		 width:200px;
+		 height:200px;
+		 }	
+		 
+	 .on{	 
+		 background:red;
+		 color:#fff;
+		 font-size:24px;
+		 text-align:center;
+		 }	 
+</style>
+</head>
+
+<body>
+	<button onclick="setStyle()">设置样式</button>
+	<div id="container">
+    	<div class="box">教育改变生活!</div>
+    </div>
+    <script>
+		//设置DOM对象的样式 (行内样式)
+    	function setStyle(){
+			var box = container.firstElementChild;
+			
+				/*box.style.background="red";
+				box.style.color="#fff";
+				box.style.fontSize="26px";
+				box.style.lineHeight="200px";*/
+				
+				//使用css方式
+				//box.style.cssText="background:red;color:#fff;font-size:24px;"
+				
+				box.setAttribute('class',"box on");
+			}
+    </script>
+</body>
+</html>

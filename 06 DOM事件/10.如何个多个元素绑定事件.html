@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<ul id="list1">
+    	<li>1这是列表项</li>
+        <li>2这是列表项</li>
+        <li>3这是列表项</li>
+        <li>4这是列表项</li>
+        <li>5这是列表项</li>
+        <li>6这是列表项</li>
+        <li>7这是列表项</li>
+        <li>8这是列表项</li>
+    </ul>
+    
+    <ul id="list2">
+    	<li>1这是列表项</li>
+        <li>2这是列表项</li>
+        <li>3这是列表项</li>
+        <li>4这是列表项</li>
+        <li>5这是列表项</li>
+        <li>6这是列表项</li>
+        <li>7这是列表项</li>
+        <li>8这是列表项</li>
+    </ul>
+    <script>
+	
+		var list1 = document.getElementById("list1");
+    	var lis = list1.getElementsByTagName("li"); //集合
+		
+		for(var i=0;i<lis.length;i++){
+			lis[i].onclick = function(e){
+				//console.log(e.target);
+				//alert(e.target.innerText);
+				
+				//this = > 指针 指向当前触发事件的元素
+				alert(this.innerText);
+				}
+			}
+
+    </script>
+</body>
+</html>

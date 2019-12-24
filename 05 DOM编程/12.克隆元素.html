@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#container{
+		width:800px;
+		height:600px;
+		margin:50px auto;
+		border:1px solid #ccc;
+		}	
+	
+	 .box{
+		 width:200px;
+		 height:200px;
+		 font-size:30px;
+		 color:#fff;
+		 line-height:200px;
+		 background-color:red;
+		 
+		 }	
+</style>
+</head>
+
+<body>
+	<button onclick="clone()">克隆</button>
+	<div id="container">
+    	<div class="box">教育改变生活!</div>
+    </div>
+    <script>
+    	function clone(){
+			var box = container.firstElementChild;
+			var box2 = box.cloneNode(true);//默认只克隆标签 及部分属性 ,内容不进行克隆,(设置参数为true会克隆所有)
+			console.log(box2);
+			container.appendChild(box2);
+			}
+    </script>
+</body>
+</html>

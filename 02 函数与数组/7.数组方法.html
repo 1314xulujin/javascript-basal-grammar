@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		/*
+			10.indexOf(item,[index]) 返回item元素在数组中首次出现的索引位置 ,index作用,指定从什么位置开始查找item的首次出现位置,默认为0 ,如果返回-1 ,表示没有找到
+			
+			11.sort() 对数组进行排序
+			
+			12.toString() 转成字符串
+			
+			ES6 新增:
+			13.includes(item,[index])用于检测item元素是否存在于数组,如果是则返回true ,否则false   ,index 为查找的开始位置
+			
+			14.forEach() 数组遍历方法
+				
+			15.filter() 过滤, 筛选 ,将返回条件的item元素放入新数组中
+			16.map() 地图,映射 ,将数据按照一定的要求,映射成另一种格式或者数据
+			17.reduce() 累计
+			
+			18.flat(num) 扁平化处理 num展开的次数 3 -> 1 需要两次
+			19.fill(str,start,end) 直接将数组所有元素,替换成指定的元素或者字符
+			20.lastIndexOf(item,[index])返回item最后一次出现的位置, index查找截止的索引位置 ,找不到返回 -1 
+		*/
+	
+    	//var arr = [6,2,3,8,9,7,4,1,5,11,20,15,'二','四','一','十五','十四'];
+		  var arr = [6,2,3,8,9,7,4,1,5,11,20,15];		
+		  
+		  //sort()
+		  var arr2 = arr.sort(function(a,b){
+			  //console.log(a,b,a-b);
+			  return a - b; //代表 从小到大排序
+			  })
+  
+		  var arr3 = arr.sort(function(a,b){
+			  return b - a; //代表 从大到小排序
+			  })
+			 
+		  //随机排序
+		  var arr4 = arr.sort(function(){
+			  return Math.random() - 0.5;
+			  })	  	  
+    </script>
+</body>
+</html>

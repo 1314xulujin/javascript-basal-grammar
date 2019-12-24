@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	//创建数组:方式1 先声明 , 后赋值
+		var arr = new Array(5);
+			arr[0]= 'apple';
+			arr[1]= 'banana';
+			arr[2]= 'orange';
+			arr[3]= 'peach';
+			arr[4]= 'grape';
+		
+			
+		//数组读取 / 写入 都将通过下标方式进行 : [0]
+		//alert(arr[2]);
+		
+		
+		//创建数组:方式2 直接声明赋值
+		var arr2 = new Array("apple","banana","orange","peach","grape");
+		
+		
+		//创建数组: 方式3 字面量创建
+		var arr3 = ["apple","banana","orange","peach","grape"];	
+		
+		
+		//数组 = > 数组对象 包含: 1.属性(静态)    2.方法(方法)
+		//万物皆对象 : 假如把人看作为一个对象 , 名字,身高,体重,肤色....都归类为属性(特征)
+		//方法:走路 ,跑步 ,吃饭 ,睡觉 ,泡妞 ,打工 
+		
+		/**
+			数组的属性:
+				length : 返回数组中的元素的数量 (数组的长度)
+				
+				-方法:
+				1.join() 将数组中的所有元素,通过一个指定的字符(默认为,)拼接成一个字符串
+				2.concat() 将多个数组合并成一个数组
+				3.reverse() 将数组的前后顺序调换
+				
+				[面试常见]
+				4.push() 向数组的末尾处追加一个或多个元素,返回数组新的长度
+				5.pop()	 删除数组的最后一个元素,返回被删除的元素
+					
+				6.shift() 删除数组的第一个元素,返回被删除的元素
+				7.unshift()向数组的开头位置追加一个或多个元素,返回数组的新的长度
+				
+				8.(不改变原数组)slice(start,end) 截取数组中索引位置从start开始 ,到 end 之间的元素
+					start <=  X  < end
+					如果不写end ,则表示截取从start位置开始后面所有的元素
+					如果end为负数 ,从后面开始截取
+					
+				9.splice(index,howmany,item,item...)
+				删除数组中索引值为index位置的元素 ,删除howmany个 ,然后在该位置添加item元素			 	
+				
+		*/
+		
+		//arr3.join("|") = > "apple|banana|orange|peach|grape"
+		
+		//alert("数组arr3,总共有:"+arr3.length+"个元素.");
+		var arr4 = [10,20,30,40,50,60];
+		//arr3.concat(arr4) = >  ["apple", "banana", "orange", "peach", "grape", 10, 20, 30]
+		
+		//arr4.reverse() = >  [30, 20, 10]
+		
+		
+		//arr4.slice(-5,-3)  = >  [20, 30]
+     </script>
+</body>
+</html>

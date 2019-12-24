@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	var arr = [1,2,3,4,5,6];
+		
+		//1.以下情况,两个判断循环条件,则以第二个为主
+		/*for(var i=0,j=0;i<6,j<4;i++,j++){
+			console.log(arr[i]);
+			}*/
+			
+		
+		//2.以下情况,两个表达式1&表达式2 ,谁先不满足条件,就以谁为主 结束循环
+		/*for(var i=0,j=0;i<8&j<6;i++,j++){
+			console.log(arr[i]);
+			}*/
+			
+		
+		//3.以下情况,两个表达式1|表达式2,谁最后不满足条件,就以谁为主,结束循环
+		for(var i=0,j=0;i<8|j<6;i++,j++){
+			console.log(arr[i]);
+			}			
+		
+		
+					
+    </script>
+</body>
+</html>

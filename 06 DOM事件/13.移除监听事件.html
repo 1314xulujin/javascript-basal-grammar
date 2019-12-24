@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#box{
+		width:200px;
+		height:200px;
+		background-color:red;
+		}
+</style>
+</head>
+
+<body>
+	<button>绑定事件</button>
+    <button onclick="unbind()">移除事件</button>
+    <div id="box"></div>
+    <script>
+		function clickEvent(){
+			alert(10);
+			}
+			
+		function clickEvent2(){
+			alert(100);
+			}
+			
+		function clickEvent3(){
+			alert(1000);
+			}	
+			
+    	box.addEventListener('click',clickEvent);
+		box.addEventListener('click',clickEvent2);
+		box.addEventListener('click',clickEvent3);
+		
+		//移除
+		function unbind(){
+			//box.removeEventListener('click',clickEvent3);
+			box.removeEventListener('click',clickEvent3);
+		 }
+		 
+		 
+    </script>
+</body>
+</html>

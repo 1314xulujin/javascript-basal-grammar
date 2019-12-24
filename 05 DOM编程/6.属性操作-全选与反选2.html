@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.select{
+		width:600px;
+		height:300px;
+		padding:40px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		}
+		
+	
+	.select span{
+		padding:14px 20px;
+		border:1px solid #ccc;
+		background-color:#f1f1f1;
+		margin:15px 5px;
+		border-radius:15px;
+		}	
+</style>
+</head>
+
+<body>
+
+	<label><input onclick="getMyChoice()" type="checkbox" name="fruit" value="apple"/>苹果</label>
+    <label><input onclick="getMyChoice()" type="checkbox" name="fruit" value="watermelon"/>西瓜</label>
+    <label><input onclick="getMyChoice()" type="checkbox" name="fruit" value="banana"/>香蕉</label>
+    <label><input onclick="getMyChoice()" type="checkbox" name="fruit" value="grape"/>葡萄</label>
+    <label><input onclick="getMyChoice()" type="checkbox" name="fruit" value="peach"/>桃子</label>
+    <p>
+    	<label><input type="checkbox" id="alls" onclick="checkAll()"/>全选</label>
+        <label><input type="checkbox" onclick="checkReverse()"/>反选</label>
+    </p>
+    <div class="select" id="select"></div>
+    <script>
+    	/**
+			需求: 点击全选, 所有的选项勾选
+				1.点击事件 - > onclick
+				2.实现勾选- > 设置checked 属性
+				3.用循环设置5个
+				
+			需求:点击反选,实现现已勾选的则取消选择, 没有选择的则选中
+				1.点击事件
+				2.判断是否是勾选 或者没有勾选 ,给没有勾选的勾选上 ,已经选择的取消	
+				
+		*/
+		var choice = [];//用于存储已经选中的结果
+		
+		var checkboxs = document.getElementsByName("fruit"); //DOM对象的集合
+		//var alls = document.getElementById("alls");
+		
+		//全选/全不选
+		function checkAll(){
+			choice = [];//清空操作
+			for(var i=0;i<checkboxs.length;i++){
+				//勾选一个
+					checkboxs[i].checked = alls.checked;
+					if(alls.checked){//如果勾选 ,则将选中的结果放入数组
+						choice.push(checkboxs[i].value);
+					  }
+				}	
+				//渲染选择结果
+				render();		
+			}
+		
+		
+		//反选
+		function checkReverse(){
+			choice = [];//清空操作
+			for(var i=0;i<checkboxs.length;i++){
+				/*//逐个判断是否被勾选
+				if(checkboxs[i].checked){
+					checkboxs[i].checked = false;
+				}else{
+					checkboxs[i].checked = true;
+			}*/
+				checkboxs[i].checked = !checkboxs[i].checked;
+				if(checkboxs[i].checked){
+					choice.push(checkboxs[i].value);
+					}
+				}	
+			//渲染选择结果
+			render();
+			}
+			
+		//渲染选择结果的方法
+		function render(){
+			var htmlStr = '';
+			for(var i=0;i<choice.length;i++){
+				htmlStr+='<span>'+choice[i]+'</span>';
+				}
+			//插入
+			select.innerHTML = htmlStr;	
+			}	
+		
+		//获取所有选择的结果
+		function getMyChoice(){
+			//筛选出已经选择的选项
+			choice = [];//清空操作
+			for(var i=0;i<checkboxs.length;i++){
+				if(checkboxs[i].checked){
+					choice.push(checkboxs[i].value);
+				}
+				}
+			//渲染选择结果
+			render();	
+			}	
+    </script>
+</body>
+</html>

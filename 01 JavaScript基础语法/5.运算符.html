@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	/**
+			运算符:
+			
+				1.算术运算符:  + - * / %(求余) ++(自身+1)  --(自身-1)
+				
+				2.赋值运算符: =  、+= 、-= 、*= 、 %=
+				
+				3.比较运算符(返回布尔值类型:true / false): >  <  ==  ===(全等于) >=  <=  !=(不等于)  !==(不全等于)
+				
+				4.逻辑运算符 : 并且(&&)   或者(||)  非(!)
+		**/
+		var a = 10;
+		var b = 20;
+		var c = a / b;
+		//alert(c);
+		
+		// 5 / 2 = 2······1  （1就是余数）
+		var d = a % 3; // 10 / 3 = 3 ·······1
+		
+		//a++;
+		
+		var e = a++;//a 会先把值赋值给e ,然后a 悄悄自己+1 ,e =10 ,a = 11
+		var f = ++a;//a 会先自身+1 ,然后再赋值给f a = 12 ,f = 12
+		
+		a+=10;// 等价于 a = a + 10;  = > 累加  a = 22
+		b-=3; //等价于 b = b - 2;  => 累减  b = 17
+		
+		var g = '22';
+		//如果比较的是一个字符串类型的数字 ,那么就会转换成数字来进行比较大小
+		//alert(a == g);//true
+		//alert(a === g);//===全等于: 需要值相等,数据类型也相等才会成立
+		
+		//alert(true && false);
+		
+		//alert(true || false);//多选一 ,只要有一个成立即成立
+		
+		//需求: 如何表示 一个值的取值范围在 50 - 100 之间
+		var h = 49;
+		//alert(50<=h && h<=100); 
+		
+		//alert(!!!true);
+		
+		//alert(0==false);
+		//alert(1==true);
+		alert(!0);
+		
+    </script>
+</body>
+</html>

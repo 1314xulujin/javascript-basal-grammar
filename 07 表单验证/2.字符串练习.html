@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+    	//1. 将以下字符串 实现首字母大写
+		var str = "hello world!";
+		
+		function capitalize(str){
+			return str.charAt(0).toUpperCase() + str.substr(1);
+		 }
+		
+		
+		
+		//2.计算以下字符串中s出现的次数
+		var str2 = 'asdjkjsdasdlkjkkjasdkjkljsdassdkjkljasdasdslkdaslkjkjasdasdasd';
+		
+		//方案一:
+		var arr = str2.split('');
+		var arr2 = arr.filter(function(item){
+			return item == 's';
+			})
+		
+		//方案二:
+		var sum = 0;
+		var index = 0;
+		
+		while(index<str2.length){
+			var s = str2.indexOf('s',index);
+			if(s>=0){
+				sum++;
+				index = s+1;
+			 }else{
+				index++; 
+				 }
+			}
+			
+		//方案三:
+		var arr3 = str2.match(/s/g);	
+    </script>
+</body>
+</html>

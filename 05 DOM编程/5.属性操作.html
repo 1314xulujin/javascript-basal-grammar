@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<button onclick="getAttr()">获取图片路径</button>
+    <button onclick="setAttr()">设置新图片</button>
+    <button onclick="removeAttr()">删除图片路径</button>
+	<img id="img" class="abc" title="title哈啊哈哈哈" alt="sadadadad" hehe="哈哈啊哈哈" src="images/fruit.jpg"/>
+    <script>
+    	var img = document.getElementById("img");
+		
+		function getAttr(){
+			//获取DOM对象的属性 getAttribute(属性名) 可以获取任何属性
+			alert(img.getAttribute("src"));
+			}	
+			
+		
+		function setAttr(){
+			//设置DOM的属性及属性值 setAttribute(属性名,属性值) 可以设置任何属性
+			img.setAttribute("src","images/grape.jpg");
+			
+			//img.setAttribute('ggggg','99999999');
+			}
+		
+		function removeAttr(){
+			//删除指定的属性 removeAttribute(需要删除的属性名)
+			img.removeAttribute("src");
+			}		
+    </script>
+</body>
+</html>

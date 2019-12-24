@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#box{
+		width:200px;
+		height:200px;
+		}
+	
+	.border{
+		border:2px solid red;
+		}
+	
+	.bg{
+		background-color:#f9f9f9;
+		}	
+		
+			
+</style>
+</head>
+
+<body>
+	<button onclick="addClass()">添加类</button>
+    <div id="box" class="abc"></div>
+    <script>
+		var box = document.getElementById("box");
+		
+		
+    	function addClass(){
+			//box.setAttribute("class","bg border")
+			 // box.className =  "bg border";	//设置元素的类名
+			  
+			  box.classList.add("bg","border"); //添加类 ,不覆盖
+			 // box.classList.add("border");
+			 
+			 box.classList.remove("abc");//删除类
+			
+			 console.log(box.classList.contains("bg"));//判断元素是否某个类 = >true
+			 
+			 box.classList.toggle('bg');//开关, 如果有这个类就删除 ,没有就添加	 
+				 		 
+			  
+			}
+    </script>
+</body>
+</html>

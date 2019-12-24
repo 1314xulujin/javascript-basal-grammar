@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<form action="#" id="form">
+    	账号<input id="abc" />
+           <input type="submit" />
+           <input type="reset" />	
+    </form>
+    <script>
+    	var abc = document.getElementById("abc");
+		var form = document.getElementById("form");
+		
+		//1.onfocus => 获得焦点事件
+		abc.onfocus = function(){
+			//console.log('这是焦点事件!');
+			} 
+			
+		//2.onblur => 失去焦点事件
+		abc.onblur = function(){
+			//console.log('这是失去焦点事件!');
+			} 
+		
+		//3.oninput => 输入内容事件
+		abc.oninput = function(){
+			//console.log('输入内容事件!');
+			} 	
+		
+		//4.onselect => 文本内容被选择事件
+		abc.onselect = function(){
+			console.log('文本内容被选择事件!');
+			} 
+			
+		//5.onchange => 输入框内容改变(需要失去焦点) / 下拉列表/单选/复选框内容发生改变时触发				
+   		abc.onchange = function(){
+			console.log('内容发生改变!');
+			}
+			
+		
+		//6.表单元素事件 - 表单提交事件 (伴随着默认的行为:页面跳转刷新)
+		form.onsubmit = function(){
+			console.log('表单正在提交....');
+			}	
+		
+		//7.表单元素事件 - 表单重置事件	
+		form.onreset = function(){
+			console.log('表单重置事件!');
+			}	
+    </script>
+</body>
+</html>

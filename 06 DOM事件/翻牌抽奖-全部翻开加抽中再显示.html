@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#container{
+		width:1100px;
+		margin:50px auto;
+		overflow:hidden;
+		border:1px solid #f1f1f1;
+		}
+	.box{
+		float:left;
+		width:200px;
+		height:300px;
+		margin:50px auto;
+		transition:all 0.35s;
+		margin:10px 5px;
+		}
+	.box.open{
+		transform:rotateY(180deg);
+		}
+	.box div{
+		position:absolute;
+		width:200px;
+		height:300px;
+		color:#fff;
+		text-align:center;
+
+		}
+	.box .front{
+		background:red;
+		font-size:20px;
+		line-height:300px;
+		transform:rotateY(180deg);
+
+		}
+	.box.open .front{
+		z-index:2;
+		}
+	.box.open.on .front{
+		background-color:gold;
+		}
+	.box .back{
+		background:#999;
+		font-size:16px;
+		line-height:300px;
+		cursor:pointer;
+		}
+
+	#container .box.show{
+		position:fixed;
+		top:50%;
+		left:50%;
+		box-shadow:0 0 10px 2px #ccc;
+		animation:animate 1s both;
+		}
+
+	@keyframes animate {
+		0%{
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%) scale(0.3) rotateY(180deg);
+			}
+		100%{
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%) scale(2) rotateY(180deg);
+			}
+		}
+</style>
+</head>
+
+<body>
+	<div id="container">
+
+    </div>
+    <script>
+    		var container = document.getElementById("container");
+			var goods = ['花呗还款','iPhone X','Mac Book Pro','清空购物车','100元充值卡'];
+
+			//生成一组 0 - 9  5个随机不重复的整数
+			var lucky = [];
+			while(lucky.length<5){
+				var num = parseInt(Math.random() * 10);
+				if(lucky.indexOf(num) == -1){
+					lucky.push(num);
+					}
+				}
+
+
+			//生成卡牌
+			var htmlStr = '';
+			for(var i=0;i<10;i++){
+				htmlStr+='<div class="box"><div class="front">谢谢惠顾</div><div class="back">点击翻开抽奖</div></div>';
+				}
+
+			//插入到容器
+			container.innerHTML = htmlStr;
+
+			//获取所有的卡牌
+			var boxs = container.getElementsByClassName("box");
+
+			//根据已经生成的一组需要中奖的卡牌,放入对应的奖品
+			for(var i=0;i<lucky.length;i++){
+				boxs[lucky[i]].firstElementChild.innerHTML = goods[i];
+				}
+
+			//监听点击事件 = > 翻牌
+
+			container.addEventListener('click',function(e){
+				var e = e || window.event;
+				//console.log(e);
+				var ele = e.target;
+
+				if(ele.className == 'back'){ //只能点击背面 ,已经翻过的不能再翻
+					//
+					console.log(ele);
+					ele.parentNode.className= "box open on";
+
+
+
+					setTimeout(function(){
+						for(var i=0;i<boxs.length;i++){
+							if(boxs[i]!= ele.parentNode && boxs[i]!=ele2){
+								console.log(ele);
+								boxs[i].className="box open";
+								}
+							}
+
+							//克隆一个大的显示
+						var ele2 = ele.parentNode.cloneNode(true);
+						ele2.className ="box open on show";
+						container.appendChild(ele2);
+
+						},350)
+				 }
+
+				})
+    </script>
+</body>
+</html>

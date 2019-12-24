@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<script>
+		// + 除了在数字类型数据中起到相加功能以外 ,在一些字符串类型数据中可以起拼接作用
+    	//var a = '10';
+		//var b = 20;
+		//var c = a + b;
+		
+		//此处如果使用 *  /  - 这些,在计算时 ,会自动将数字的字符串转换成数字类型后进行计算 - (弱类型转换)
+		
+		//字符串与字符串拼接 或者 与 变量拼接 要使用 + 连接 
+		
+		//alert(c);//1020
+		
+		var a="小明";
+		var b = 20;
+		var c = "千里之行，始于足下。";
+		
+		//把上的文字拼成一段文字 ：【 小明说：我今年20岁，我喜欢的一句话是:"千里之行，始于足下。"】
+		
+		//在控制台alert()弹出以上文字，注意标点符号必须要一样。
+		
+		//alert(a + "说:我今年" + b + '岁,我喜欢的一句话是:"' + c + '"');
+		
+		 //alert(a + "说:我今年" + b + "岁,我喜欢的一句话是:\"" + c + "\"");
+		 
+		 //  \"  转义双引号 ,因为" 在js中的作用是用于括起一组字符串的 ,如果\" 转义后就不具有括起字符就是字符串的功能,就会变成一个普通的双引号字符
+		 
+		 //需求 : 直接在浏览器窗口弹出 【<a href="http://www.baidu.com">百度</a>】
+		 //alert("<a href=\"http://www.baidu.com\">百度</a>");
+		// alert('<a href="http://www.baidu.com">百度</a>');
+		 
+		 var url = "http://www.baidu.com";
+		 var title = "百度";	
+		 
+		 
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.container{
+		width:600px;
+		margin:50px auto;
+		}
+	.table{
+		width:100%;
+		border:1px solid #ccc;
+		border-spacing:0;
+		border-collapse:collapse;
+		text-align:center;
+		}
+	.table td,th{
+		line-height:30px;
+		border:1px solid #ccc;
+		}	
+</style>
+</head>
+
+<body>
+	<div class="container">
+    <div>
+    	<button onclick="addRow()">增加一行</button>
+        <button onclick="removeRow()">删除第二行</button>
+        <button onclick="setStyle()">修改标题样式</button>
+        <button onclick="cloneRow()">复制最后一行</button>
+        <button onclick="removeChecked()">删除所选</button>
+    </div>
+    		<table class="table">
+    	<thead>
+        	<tr id="title">
+            <th><input id="checkAll" type="checkbox" /></th>
+            <th>书名</th>
+            <th>价格</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        	<tr>
+            	<td><input type="checkbox" name="book" /></td>
+                <td>看得见风景的房间</td>
+                <td>￥30.00</td>
+            </tr>
+            <tr>
+            	<td><input type="checkbox" name="book" /></td>
+                <td>60个瞬间</td>
+                <td>￥32.00</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <script>
+		var tbody = document.getElementById("tbody");
+		var title = document.getElementById("title");
+		var checkAll = document.getElementById("checkAll");
+		
+		var books = document.getElementsByName("book");//会动态更新
+		
+		
+    	//增加一行
+		function addRow(){
+			var tr = document.createElement("tr");//创建tr标签
+			    
+				tr.innerHTML = '<td><input type="checkbox" name="book"' +(checkAll.checked?"checked":"")+'/></td><td>我是猫</td><td>￥26.00</td>';
+				tbody.appendChild(tr); //插入
+				console.log(tr);	
+			}
+			
+		
+		//删除第二行
+		function removeRow(){
+			var tr = tbody.firstElementChild;//获取第一行
+			//console.log(tr);
+			if(tr){
+				tbody.removeChild(tr); //删除
+			  }else{
+				alert('没有可删内容!');
+			  }
+			}	
+			
+		
+		//修改标题样式
+		function setStyle(){
+			title.style.cssText="background:#f1f1f1;color:#666;";
+			}	
+		
+		//复制最后一行
+		function cloneRow(){
+			var tr = tbody.lastElementChild;
+			//console.log(tr);
+			if(tr){
+			var tr2 = tr.cloneNode(true);
+			tbody.appendChild(tr2);
+			  }else{
+				alert('没有更多内容可以被复制!');	
+				}
+			}
+			
+		//事件的绑定
+			checkAll.onclick = function(){
+				for(var i=0;i<books.length;i++){
+					books[i].checked = checkAll.checked;
+					}
+				}
+		
+		//删除所选
+		function removeChecked(){
+			for(var i=0;i<books.length;i++){
+				if(books[i].checked){
+					//当前的复选被勾选 = > 删除tr
+					var tr = books[i].parentNode.parentNode;
+					console.log(tr); 
+					tbody.removeChild(tr);
+					i--;
+					}
+				}
+			}			
+    </script>
+</body>
+</html>

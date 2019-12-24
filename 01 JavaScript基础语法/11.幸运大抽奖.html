@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.container{
+		position:relative;
+		width:600px;
+		height:500px;
+		background:url(images/tx1.png);
+		margin:50px auto;
+		border:1px solid #ccc;
+		}
+		
+	.container button{
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-60px;
+		margin-top:-20px;
+		width:120px;
+		height:40px;
+		background:#ff3c3c;
+		color:#fff;
+		border:none;
+		cursor:pointer;
+		}	
+		
+	.container button:hover{
+		background-color:#900;
+		}	
+</style>
+</head>
+
+<body>
+	<div class="container">
+    	<button onclick="lucky()">开始抽奖</button>
+    </div>
+    <script>
+    	/**
+			需求分析:
+				1.单击抽奖按钮 ,触发抽奖机制
+				2.通过生成的随机数,来判断中奖情况
+					1)怎么生成随机数 => Math.random();
+					2)随机数取值 => 对生成的0-1之间的小数 处理后 ,取整数进行判断  
+					3)怎么判断中奖情况:8 => 一等奖 , 2 / 6 = >二等奖 ,3 / 5 / 7 =>三等奖
+					
+			作业:实现统计中奖情况:
+				一等奖次数
+				二等奖次数
+				三等奖次数
+				中奖次数
+				综合中奖概率				
+		*/
+    
+		//定义一个抽奖函数
+		function lucky(){
+			var num = Math.random(); // 生成 0-1 之间的数字
+				num = num * 10;// 0 - 10之间的数字
+				num = parseInt(num);//截取整数部分
+				
+			/*	if(num == 8){
+					alert("恭喜您中得一等奖!");
+					}else if(num == 2 || num==6){
+					alert("恭喜您中得二等奖!");	
+					}else if(num == 3 || num==5 || num==7){
+					alert("恭喜您中得三等奖!");
+					}else{
+					alert("谢谢参与,继续努力!");	
+					}*/	
+					
+				switch(num){
+					case 8:
+						alert("恭喜您中得一等奖!" + num);
+						break;
+					case 2:
+					case 6:
+						alert("恭喜您中得二等奖!" + num);
+						break;
+					case 3:
+					case 5:
+					case 7:
+						alert("恭喜您中得三等奖!" + num);
+						break;
+					default :
+						alert("谢谢参与,继续努力!" + num + "\n\n123");	
+					}
+					
+					
+			}
+    </script>
+</body>
+</html>

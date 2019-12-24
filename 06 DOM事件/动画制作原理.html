@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	#box{
+		position:absolute;
+		left:0;
+		width:100px;
+		height:100px;
+		background:red;
+		}
+</style>
+</head>
+
+<body>
+	<div id="box"></div>
+    <script>
+    	//动画 : 从布局样式的A状态 ,设置一个时间,改变到B状态的过程.
+		//在js实现动画的时代 ,只能用于一些css属性值为数字类型的属性才能制作动画   
+		 
+		 var left = 0;
+		 var opacity = 0;
+		 var direction = true;
+		 
+		 var timer =  setInterval(function(){
+			 left+=2;
+			 
+			 if(direction){
+				 opacity+=0.01;
+				 if(opacity>=1)direction=false;
+				 }else{
+				 opacity-=0.01;
+				 if(opacity<=0)direction=true;	 
+				}
+			 
+			 
+			 box.style.left = left + 'px';
+			 box.style.opacity = opacity;
+			 if(left >=1000){
+				 clearInterval(timer);
+				 }
+			 
+			 },1000 / 60);
+    </script>
+</body>
+</html>

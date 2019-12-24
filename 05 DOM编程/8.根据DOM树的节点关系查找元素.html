@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<div id="box">
+        <span>第一个子元素span</span>
+    	<p id="p1">第二个子元素p</p>	
+        <div>第三个子元素div</div>
+    </div>
+    
+    <script>
+    	// html = > document.documentElement
+		
+		//body =>  document.body
+		
+		//head => document.head
+		//console.log(document.head);
+		
+		//title = > document.head.title
+		//console.log(document.title='我开心就好!'); 
+		
+		var box = document.getElementById("box");
+		
+		/*
+			注意:节点分: 1.元素  2.属性 3.文本节点(多数表现为空格,换行,及文本内容)
+				
+			根据元素的层级关系 查找对应的元素:
+				1.父辈 : parentNode 返回当前元素的父级元素节点
+					
+				
+				2.兄弟 :
+					1)previousSibling 返回当前元素的前面一个同胞元素 (文本 或者 元素节点)
+					2)previousElementSibling 返回当前元素的前一个同胞元素
+					
+					3)nextSibling 返回当前元素的下一个同胞元素(文本 或者元素节点)
+					4)nextElementSibling 返回当前元素的下一个同胞
+					
+				
+				3.子元素
+					1)firstChild  返回当前元素的第一个子节点 (可能是文本节点或者元素节点)
+					2)firstElementChild	返回当前元素的第一个子元素 (只返回元素节点)
+					
+					3)lastChild  返回最后一个子节点
+					4)lastElementChild  返回最后一个子元素节点
+				
+				
+				childNodes 返回当前元素的所有子节点集合(文本 / 元素)
+				children 返回当前元素所有的子元素
+				
+				nodeType 返回节点类型 :
+						1 元素节点
+						3 文本节点
+						9 文档
+						8 注释
+					
+		*/
+		//console.log(box.lastChild);
+		var p1 = document.getElementById("p1");
+		
+			
+			
+    </script>
+</body>
+</html>
